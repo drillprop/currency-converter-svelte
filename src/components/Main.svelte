@@ -1,5 +1,5 @@
 <script>
-
+  import HomeHeader from "./Homeheader.svelte";
 </script>
 
 <style>
@@ -10,4 +10,6 @@
   }
 </style>
 
-<main>this is main component</main>
+<main>
+  <HomeHeader />
+</main>
