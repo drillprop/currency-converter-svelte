@@ -1,11 +1,9 @@
 <script>
-	export let name;
+  import Nav from "./Nav.svelte";
 </script>
 
 <style>
-	h1 {
-		color: purple;
-	}
+
 </style>
 
-<h1>Hello {name}!</h1>
+<Nav />
