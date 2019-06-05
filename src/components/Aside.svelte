@@ -1,3 +1,7 @@
+<script>
+  export let currency;
+</script>
+
 <style>
   img {
     display: block;
@@ -9,5 +13,5 @@
 </style>
 
 <aside>
-  <img src="/assets/usd.jpg" alt="USD" />
+  <img src="/assets/{currency}.jpg" alt={currency} />
 </aside>

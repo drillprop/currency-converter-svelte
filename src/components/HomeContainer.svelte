@@ -1,6 +1,7 @@
 <script>
   import Aside from "./Aside.svelte";
   import Main from "./Main.svelte";
+  const currencyArray = ["usd", "eur", "czk"];
 </script>
 
 <style>
@@ -12,6 +13,6 @@
 </style>
 
 <div id="container">
-  <Aside />
+  <Aside currency={currencyArray[0]} />
   <Main />
 </div>
