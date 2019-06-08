@@ -2,6 +2,7 @@
   import Aside from "./Aside.svelte";
   import Main from "./Main.svelte";
   const currencyArray = ["usd", "eur", "czk"];
+  const swapped = false;
 </script>
 
 <style>
@@ -14,5 +15,5 @@
 
 <div id="container">
   <Aside currency={currencyArray[0]} />
-  <Main />
+  <Main {swapped} currency={currencyArray[0].toUpperCase()} />
 </div>
