@@ -1,5 +1,6 @@
 <script>
-  export let currency;
+  export let pickedCurrency;
+  export let currencyArray;
 </script>
 
 <style>
@@ -13,5 +14,5 @@
 </style>
 
 <aside>
-  <img src="/assets/{currency}.jpg" alt={currency} />
+  <img src="/assets/{currencyArray[pickedCurrency]}.jpg" alt={pickedCurrency} />
 </aside>

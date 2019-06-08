@@ -2,7 +2,7 @@
   import HomeHeader from "./HomeHeader.svelte";
   import HomeSubtitle from "./HomeSubtitle.svelte";
   export let swapped;
-  export let currency;
+  export let pickedCurrency;
   export let currencyArray;
 </script>
 
@@ -23,7 +23,7 @@
 
 <main>
   <HomeHeader />
-  <HomeSubtitle {swapped} {currency} />
+  <HomeSubtitle {swapped} {pickedCurrency} />
   <select name="currency" id="currency">
     {#each currencyArray as currency}
       <option value={currency.toUpperCase()}>{currency.toUpperCase()}</option>
