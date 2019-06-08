@@ -15,5 +15,5 @@
 
 <div id="container">
   <Aside currency={currencyArray[0]} />
-  <Main {swapped} currency={currencyArray[0].toUpperCase()} />
+  <Main {currencyArray} {swapped} currency={currencyArray[0].toUpperCase()} />
 </div>
