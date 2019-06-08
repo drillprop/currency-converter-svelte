@@ -1,13 +1,13 @@
 <script>
   import Aside from "./Aside.svelte";
   import Main from "./Main.svelte";
-  const currencyArray = ["usd", "eur", "czk"];
+
   let pickedCurrency = "usd";
+  let swapped = false;
+
   const changeCurrency = e => {
     pickedCurrency = e.detail.selected;
   };
-
-  const swapped = false;
 </script>
 
 <style>
@@ -20,9 +20,5 @@
 
 <div id="container">
   <Aside {pickedCurrency} />
-  <Main
-    {currencyArray}
-    {swapped}
-    {pickedCurrency}
-    on:changeCurrency={changeCurrency} />
+  <Main {swapped} {pickedCurrency} on:changeCurrency={changeCurrency} />
 </div>
