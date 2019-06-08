@@ -1,6 +1,8 @@
 <script>
   import HomeHeader from "./HomeHeader.svelte";
   import HomeSubtitle from "./HomeSubtitle.svelte";
+  export let swapped;
+  export let currency;
 </script>
 
 <style>
@@ -13,6 +15,6 @@
 
 <main>
   <HomeHeader />
-  <HomeSubtitle />
+  <HomeSubtitle {swapped} {currency} />
 
 </main>
