@@ -1,7 +1,7 @@
 <script>
   import HomeHeader from "./HomeHeader.svelte";
   import HomeSubtitle from "./HomeSubtitle.svelte";
-  import Select from "./Select.svelte";
+  import SelectCurrency from "./SelectCurrency.svelte";
   export let swapped;
   export let pickedCurrency;
 </script>
@@ -17,5 +17,5 @@
 <main>
   <HomeHeader />
   <HomeSubtitle {swapped} {pickedCurrency} />
-  <Select on:changeCurrency />
+  <SelectCurrency on:changeCurrency />
 </main>
