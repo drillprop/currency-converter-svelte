@@ -1,5 +1,5 @@
 <script>
-  import HomeHeader from "./Homeheader.svelte";
+  import HomeHeader from "./HomeHeader.svelte";
   import HomeSubtitle from "./HomeSubtitle.svelte";
 </script>
 
