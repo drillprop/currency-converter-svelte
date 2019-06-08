@@ -1,5 +1,6 @@
 <script>
   import HomeHeader from "./Homeheader.svelte";
+  import HomeSubtitle from "./HomeSubtitle.svelte";
 </script>
 
 <style>
@@ -12,4 +13,6 @@
 
 <main>
   <HomeHeader />
+  <HomeSubtitle />
+
 </main>
