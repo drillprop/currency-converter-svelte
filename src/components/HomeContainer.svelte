@@ -8,6 +8,9 @@
   const changeCurrency = e => {
     pickedCurrency = e.detail.selected;
   };
+  const swapCurrency = e => {
+    swapped = !swapped;
+  };
 </script>
 
 <style>
@@ -20,5 +23,9 @@
 
 <div id="container">
   <Aside {pickedCurrency} />
-  <Main {swapped} {pickedCurrency} on:changeCurrency={changeCurrency} />
+  <Main
+    {swapped}
+    {pickedCurrency}
+    on:changeCurrency={changeCurrency}
+    on:swapCurrency={swapCurrency} />
 </div>
