@@ -1,11 +1,9 @@
 <script>
   import { createEventDispatcher } from "svelte";
+  import { currency } from "./stores.js";
   const currencyArray = ["usd", "eur", "czk"];
-  const dispatch = createEventDispatcher();
-  const dispatchChange = e => {
-    dispatch("changeCurrency", {
-      selected: e.target.value
-    });
+  const changeCurrency = e => {
+    currency.set(e.target.value);
   };
 </script>
 
@@ -19,7 +17,11 @@
   }
 </style>
 
-<select name="currency" id="currency" on:change={dispatchChange}>
+<select
+  name="currency"
+  id="currency"
+  bind:value={$currency}
+  on:change={changeCurrency}>
   {#each currencyArray as currency}
     <option value={currency.toUpperCase()}>{currency.toUpperCase()}</option>
   {/each}

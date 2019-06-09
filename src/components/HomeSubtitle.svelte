@@ -1,6 +1,6 @@
 <script>
+  import { currency } from "./stores.js";
   export let swapped;
-  export let pickedCurrency;
 </script>
 
 <style>
@@ -14,7 +14,7 @@
 </style>
 
 {#if swapped}
-  <h3>Convert PLN to {pickedCurrency}</h3>
+  <h3>Convert PLN to {$currency}</h3>
 {:else}
-  <h3>Convert {pickedCurrency} to PLN</h3>
+  <h3>Convert {$currency} to PLN</h3>
 {/if}

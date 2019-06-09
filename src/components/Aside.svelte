@@ -1,5 +1,5 @@
 <script>
-  export let pickedCurrency;
+  import { currency } from "./stores.js";
 </script>
 
 <style>
@@ -13,5 +13,5 @@
 </style>
 
 <aside>
-  <img src="/assets/{pickedCurrency}.jpg" alt={pickedCurrency} />
+  <img src="/assets/{$currency}.jpg" alt={$currency} />
 </aside>

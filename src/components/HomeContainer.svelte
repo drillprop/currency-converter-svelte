@@ -2,12 +2,8 @@
   import Aside from "./Aside.svelte";
   import Main from "./Main.svelte";
 
-  let pickedCurrency = "usd";
   let swapped = false;
 
-  const changeCurrency = e => {
-    pickedCurrency = e.detail.selected;
-  };
   const swapCurrency = e => {
     swapped = !swapped;
   };
@@ -22,10 +18,8 @@
 </style>
 
 <div id="container">
-  <Aside {pickedCurrency} />
+  <Aside />
   <Main
     {swapped}
-    {pickedCurrency}
-    on:changeCurrency={changeCurrency}
     on:swapCurrency={swapCurrency} />
 </div>
