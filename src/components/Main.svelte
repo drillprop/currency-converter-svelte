@@ -3,6 +3,7 @@
   import HomeSubtitle from "./HomeSubtitle.svelte";
   import SelectCurrency from "./SelectCurrency.svelte";
   import SwapCurrency from "./SwapCurrency.svelte";
+  import AmountOfCurrency from "./AmountOfCurrency.svelte";
   export let swapped;
   export let pickedCurrency;
 </script>
@@ -18,6 +19,16 @@
 <main>
   <HomeHeader />
   <HomeSubtitle {swapped} {pickedCurrency} />
-  <SelectCurrency on:changeCurrency />
+  <p>
+    {#if !swapped}
+      <AmountOfCurrency />
+      <SelectCurrency on:changeCurrency />
+      equals PLN
+    {:else}
+      <AmountOfCurrency />
+      PLN equals
+      <SelectCurrency on:changeCurrency />
+    {/if}
+  </p>
   <SwapCurrency on:swapCurrency />
 </main>
