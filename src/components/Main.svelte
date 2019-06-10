@@ -3,7 +3,7 @@
   import HomeSubtitle from "./HomeSubtitle.svelte";
   import SelectCurrency from "./SelectCurrency.svelte";
   import SwapCurrency from "./SwapCurrency.svelte";
-  import AmountOfCurrency from "./AmountOfCurrency.svelte";
+  import AmountInput from "./AmountInput.svelte";
   export let swapped;
 </script>
 
@@ -20,11 +20,11 @@
   <HomeSubtitle {swapped} />
   <p>
     {#if !swapped}
-      <AmountOfCurrency />
+      <AmountInput />
       <SelectCurrency />
       equals PLN
     {:else}
-      <AmountOfCurrency />
+      <AmountInput />
       PLN equals
       <SelectCurrency />
     {/if}
