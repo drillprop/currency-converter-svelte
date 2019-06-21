@@ -1,11 +1,14 @@
 <script>
   import { amount } from "./stores";
-  import { tick } from "svelte";
 
-  const changeAmount = async e => {
-    amount.set(e.target.value);
-    await tick();
-    if (!e.target.value) {
+  const changeAmount = e => {
+    const { value, style } = e.target;
+    amount.set(value);
+    const { length } = value.toString();
+    if (length >= 4) {
+      style.width = 20 + value.length * 10 + "px";
+    }
+    if (!value) {
       amount.set(0);
     }
   };
@@ -19,7 +22,8 @@
     font-size: 16px;
     border: none;
     width: 50px;
-    height: 25px;
+    text-indent: 5px;
+    height: 40px;
   }
   /* remove arrows from input */
   input[type="number"]::-webkit-inner-spin-button,
@@ -32,5 +36,7 @@
 <input
   type="number"
   placeholder="0"
+  min={0}
+  max={100}
   bind:value={$amount}
-  on:change={changeAmount} />
+  on:input={changeAmount} />
