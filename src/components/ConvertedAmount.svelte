@@ -1,7 +1,5 @@
 <script>
-  import { currency } from "./stores";
-  import { amount } from "./stores";
-  import { rate } from "./stores";
+  import { currency, amount, rate, convertValue } from "./stores";
   import { onMount, afterUpdate } from "svelte";
 
   let currentCurrency;
@@ -26,6 +24,7 @@
       currentCurrency = $currency;
     }
   });
+  $: convertValue.set(($rate * $amount).toFixed(2) || 0);
 </script>
 
-{($rate * $amount).toFixed(2) || 0}
+{$convertValue}
