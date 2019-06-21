@@ -1,7 +1,7 @@
 <script>
   import { currency, amount, rate, convertValue } from "./stores";
   import { onMount, afterUpdate } from "svelte";
-
+  export let swapped;
   let currentCurrency;
 
   const fetchRates = async () => {
@@ -24,7 +24,11 @@
       currentCurrency = $currency;
     }
   });
-  $: convertValue.set(($rate * $amount).toFixed(2) || 0);
+  let convert;
+  $: convert = swapped
+    ? ($amount / $rate).toFixed(2) || 0
+    : ($rate * $amount).toFixed(2) || 0;
+  $: convertValue.set(convert);
 </script>
 
 {$convertValue}

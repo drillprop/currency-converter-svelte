@@ -24,12 +24,12 @@
       <AmountInput />
       <SelectCurrency />
       equals
-      <ConvertedAmount />
+      <ConvertedAmount {swapped} />
       PLN
     {:else}
       <AmountInput />
       PLN equals
-      <ConvertedAmount />
+      <ConvertedAmount {swapped} />
       <SelectCurrency />
     {/if}
   </p>
