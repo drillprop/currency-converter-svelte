@@ -2,7 +2,9 @@
   import { currency } from "./stores";
   import { amount } from "./stores";
   import { rate } from "./stores";
-  import { onMount, afterUpdate, tick } from "svelte";
+  import { onMount, afterUpdate } from "svelte";
+
+  let currentCurrency;
 
   const fetchRates = async () => {
     try {
@@ -17,6 +19,13 @@
     }
   };
   onMount(fetchRates);
+
+  afterUpdate(() => {
+    if (currentCurrency !== $currency) {
+      fetchRates();
+      currentCurrency = $currency;
+    }
+  });
 </script>
 
 {($rate * $amount).toFixed(2) || 0}
