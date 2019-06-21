@@ -4,6 +4,7 @@
   import SelectCurrency from "./SelectCurrency.svelte";
   import SwapCurrency from "./SwapCurrency.svelte";
   import AmountInput from "./AmountInput.svelte";
+  import ConvertedAmount from "./ConvertedAmount.svelte";
   export let swapped;
 </script>
 
@@ -22,10 +23,13 @@
     {#if !swapped}
       <AmountInput />
       <SelectCurrency />
-      equals PLN
+      equals
+      <ConvertedAmount />
+      PLN
     {:else}
       <AmountInput />
       PLN equals
+      <ConvertedAmount />
       <SelectCurrency />
     {/if}
   </p>
