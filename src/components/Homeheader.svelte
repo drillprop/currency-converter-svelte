@@ -4,6 +4,7 @@
 
 <style>
   h1 {
+    font-family: "Ubuntu", sans-serif;
     color: #444;
     margin: 0;
     margin-bottom: 15px;
