@@ -10,6 +10,11 @@
     height: 100vh;
     object-fit: cover;
   }
+  @media (max-width: 800px) {
+    img {
+      display: none;
+    }
+  }
 </style>
 
 <aside>
