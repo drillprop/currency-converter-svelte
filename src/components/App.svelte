@@ -1,11 +1,12 @@
 <script>
   import Nav from "./Nav.svelte";
+  import Aside from "./Aside.svelte";
   import Router from "svelte-spa-router";
-  import HomeContainer from "./HomeContainer.svelte";
+  import Home from "../pages/Home.svelte";
   const routes = {
-    "/": HomeContainer,
-    "/rates": HomeContainer,
-    "/chart": HomeContainer
+    "/": Home,
+    "/rates": Home,
+    "/chart": Home
   };
 </script>
 
@@ -15,6 +16,15 @@
     padding: 0;
     font-family: "Poppins", sans-serif;
   }
+  #container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+  @media (max-width: 800px) {
+    #container {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>
 
 <svelte:head>
@@ -23,5 +33,8 @@
     href="https://fonts.googleapis.com/css?family=Poppins:400,500,700|Ubuntu:500" />
 </svelte:head>
 
-<Router {routes} />
+<div id="container">
+  <Aside />
+  <Router {routes} />
+</div>
 <Nav />
