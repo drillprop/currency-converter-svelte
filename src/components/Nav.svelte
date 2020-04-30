@@ -1,5 +1,5 @@
 <script>
-
+  import { link } from "svelte-spa-router";
 </script>
 
 <style>
@@ -31,13 +31,13 @@
 <nav>
   <ul>
     <li>
-      <a href="/">Curency Converter</a>
+      <a href="/" use:link>Curency Converter</a>
     </li>
     <li>
-      <a href="/rates">Today's Exchange Rates</a>
+      <a href="/rates" use:link>Today's Exchange Rates</a>
     </li>
     <li>
-      <a href="/charts">Exchange Rates Chart</a>
+      <a href="/chart" use:link>Exchange Rates Chart</a>
     </li>
   </ul>
 </nav>
