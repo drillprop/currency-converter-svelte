@@ -1,12 +1,14 @@
 <script>
+  import Home from "../pages/Home.svelte";
+  import Rates from "../pages/Rates.svelte";
   import Nav from "./Nav.svelte";
   import Aside from "./Aside.svelte";
   import Router from "svelte-spa-router";
-  import Home from "../pages/Home.svelte";
+
   const routes = {
     "/": Home,
-    "/rates": Home,
-    "/chart": Home
+    "/rates": Rates,
+    "/chart": Home,
   };
 </script>
 
