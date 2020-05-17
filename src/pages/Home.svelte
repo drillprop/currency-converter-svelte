@@ -5,7 +5,7 @@
   import SelectCurrency from "../components/SelectCurrency.svelte";
   import ConvertedAmount from "../components/ConvertedAmount.svelte";
   import SwapCurrency from "../components/SwapCurrency.svelte";
-  import { currency } from "../components/stores.js";
+  import { currency, amount } from "../components/stores.js";
 
   let swapped = false;
 
@@ -21,7 +21,6 @@
   }
 </style>
 
-<!-- <Aside /> -->
 <main>
   <MainTitle title="Currency Converter" />
   {#if swapped}
@@ -35,14 +34,14 @@
       <AmountInput />
       <SelectCurrency />
       equals
-      <ConvertedAmount {swapped} />
+      <ConvertedAmount {swapped} amount={$amount} currency={$currency} />
       PLN
     {:else}
       <AmountInput />
       PLN equals
-      <ConvertedAmount {swapped} />
+      <ConvertedAmount {swapped} amount={$amount} currency={$currency} />
       <SelectCurrency />
     {/if}
   </p>
-  <SwapCurrency on:swapCurrency={swapCurrency} />
+  <SwapCurrency on:swapCurrency={swapCurrency} amount={$amount} />
 </main>
