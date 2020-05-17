@@ -1,8 +1,6 @@
 <script>
-  import Aside from "../components/Aside.svelte";
   import MainTitle from "../components/MainTitle.svelte";
   import SubTitle from "../components/SubTitle.svelte";
-  import Main from "../components/Main.svelte";
   import AmountInput from "../components/AmountInput.svelte";
   import SelectCurrency from "../components/SelectCurrency.svelte";
   import ConvertedAmount from "../components/ConvertedAmount.svelte";
