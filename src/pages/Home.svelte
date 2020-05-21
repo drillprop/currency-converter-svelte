@@ -24,8 +24,6 @@
       amount = 0;
     }
   };
-
-  $: console.log(amount);
 </script>
 
 <style>
