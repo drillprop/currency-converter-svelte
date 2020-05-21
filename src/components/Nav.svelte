@@ -1,5 +1,6 @@
 <script>
   import { link } from "svelte-spa-router";
+  let isMenuActive = false;
 </script>
 
 <style>
@@ -71,9 +72,10 @@
     }
     nav {
       width: 100%;
-      opacity: 1;
-      height: 100vh;
-      transition: opacity 400ms 0ms;
+      opacity: 0;
+      height: 0;
+      overflow: hidden;
+      transition: height 0ms 400ms, opacity 400ms 0ms;
     }
     ul {
       margin-top: 130px;
@@ -86,17 +88,22 @@
       font-weight: bold;
       margin-top: 24px;
     }
+    .isMenuActive {
+      opacity: 1;
+      height: 100vh;
+      transition: opacity 400ms 0ms;
+    }
   }
 </style>
 
 <div class="hamburger-container">
-  <input type="checkbox" />
+  <input type="checkbox" bind:checked={isMenuActive} />
   <div class="hamburger-bar" />
   <div class="hamburger-bar" />
   <div class="hamburger-bar" />
 </div>
 
-<nav>
+<nav class:isMenuActive>
   <ul>
     <li>
       <a href="/" use:link>Curency Converter</a>
