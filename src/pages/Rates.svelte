@@ -1,8 +1,19 @@
 <script>
+  import { onMount, onDestroy } from "svelte";
+
+  import { currency } from "../components/stores";
   import MainTitle from "../components/MainTitle.svelte";
   import ConvertedAmount from "../components/ConvertedAmount.svelte";
 
   const currencies = ["usd", "eur", "czk"];
+
+  onMount(() => {
+    currency.set("chart");
+  });
+
+  onDestroy(() => {
+    currency.set("usd");
+  });
 </script>
 
 <style>
