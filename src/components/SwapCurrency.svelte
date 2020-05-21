@@ -1,11 +1,9 @@
 <script>
   import { createEventDispatcher } from "svelte";
-  import { amount } from "./stores";
   const dispatch = createEventDispatcher();
 
   const swapCurrency = () => {
     dispatch("swapCurrency");
-    amount.set(0)
   };
 </script>
 
