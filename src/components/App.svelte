@@ -8,7 +8,7 @@
   const routes = {
     "/": Home,
     "/rates": Rates,
-    "/chart": Home,
+    "/chart": Home
   };
 </script>
 
@@ -38,5 +38,5 @@
 <div id="container">
   <Aside />
   <Router {routes} />
+  <Nav />
 </div>
-<Nav />
